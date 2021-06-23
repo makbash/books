@@ -4,7 +4,6 @@ export const BookContext = React.createContext()
 
 class BookContextProvider extends React.Component {
 
-    // flow: 2.1
     state = {
         books: [
             {
@@ -54,9 +53,7 @@ class BookContextProvider extends React.Component {
 
     render() {
         return (
-            // flow: 2.2
             <BookContext.Provider value={{ ...this.state }}>
-                {/* flow: 2.3 */}
                 {this.props.children}
             </BookContext.Provider>
         )
@@ -64,23 +61,4 @@ class BookContextProvider extends React.Component {
 
 }
 
-
-// console.log(myContext)
-
 export default BookContextProvider;
-
-/**
-    1.Default Value ----> this.context
-    - Context nesnesini oluşturduk
-    - Başlangıç değerini export ettik
-    - İlgili component'a import ettik
-    - context type yardımı ile bu context'i ilgili compenent'a atadık
-    - this.context yardımıı ile ilgili veriye ulaştık
-
-    2. Provider ----> Consumer
-    - 2.1 Class compenent oluşturduk ve veriyi state içerisine koyduk
-    - 2.2 Context'e ait Provider ile State te bulunan veriyi aldık
-    - 2.3 Parent - Child ilişkisi => {this.props.children}
-    - 2.4 Veriyi göndereceğimiz compenent ta Context'i import ediyoruz
-    - 2.5 Render içerisinde Consumer ile Provider dan gelen veriyi yakalıyoruz.
- */
