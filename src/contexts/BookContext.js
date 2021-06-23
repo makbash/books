@@ -55,9 +55,9 @@ class BookContextProvider extends React.Component {
     render() {
         return (
             // flow: 2.2
-            <BookContext.Provider value={this.state}>
+            <BookContext.Provider value={{ ...this.state }}>
                 {/* flow: 2.3 */}
-                {this.props.children} 
+                {this.props.children}
             </BookContext.Provider>
         )
     }
@@ -73,7 +73,7 @@ export default BookContextProvider;
     1.Default Value ----> this.context
     - Context nesnesini oluşturduk
     - Başlangıç değerini export ettik
-    - İlgili component'a import ettik 
+    - İlgili component'a import ettik
     - context type yardımı ile bu context'i ilgili compenent'a atadık
     - this.context yardımıı ile ilgili veriye ulaştık
 
