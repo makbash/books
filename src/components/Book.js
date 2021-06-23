@@ -5,7 +5,7 @@ import './Book.css';
 class Book extends React.Component {
 
     render() {
-        console.log(this.props.book)
+        // console.log(this.props.book)
 
         return (
             <div className="col-lg-4 col-sm-6 mb-4">
